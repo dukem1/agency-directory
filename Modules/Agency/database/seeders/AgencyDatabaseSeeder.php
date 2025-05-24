@@ -13,6 +13,7 @@ class AgencyDatabaseSeeder extends Seeder
     {
         $this->call([
             AgencySeeder::class,
+            AgencyCategorySeeder::class,
         ]);
     }
 }
