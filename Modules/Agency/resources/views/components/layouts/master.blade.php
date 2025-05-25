@@ -28,3 +28,4 @@
         {{-- Vite JS --}}
         {{-- {{ module_vite('build-agency', 'resources/assets/js/app.js') }} --}}
     </body>
+</html>
