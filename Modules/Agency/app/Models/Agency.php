@@ -2,9 +2,11 @@
 
 namespace Modules\Agency\Models;
 
+use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Agency\Database\Factories\AgencyFactory;
+use Modules\Agency\ModelFilters\AgencyFilter;
 use Modules\Category\Traits\HasCategories;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -14,6 +16,7 @@ class Agency extends Model
     use HasFactory;
     use HasCategories;
     use HasSlug;
+    use Filterable;
 
     protected $guarded = ['id'];
 
@@ -38,5 +41,10 @@ class Agency extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function modelFilter(): ?string
+    {
+        return $this->provideFilter(AgencyFilter::class);
     }
 }
