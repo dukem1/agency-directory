@@ -27,10 +27,10 @@ A lightweight Service Provider Directory with the following specs:
 - Run `./vendor/bin/sail up -d`
 - Run `./vendor/bin/sail artisan migrate`
 - Run `./vendor/bin/sail artisan storage:link`
-- Run `./vendor/bin/sail artisan module:seed`
+- Run `./vendor/bin/sail artisan module:seed` - then choose 'All' and run it
 - Run `./vendor/bin/sail npm install`
 - Run `./vendor/bin/sail npm run build`
-- Open link http://localhost:8080/agencies
+- Open the link in browser: http://localhost:8080/agencies
 
 ## Design decisions
 - Using pgsql as a DB as have recent experience only with it
