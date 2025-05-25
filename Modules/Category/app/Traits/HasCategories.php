@@ -45,5 +45,12 @@ trait HasCategories
         });
     }
 
+    public function scopeWhereCategories(Builder $query, array $categoryIds): void
+    {
+        $query->whereHas('categories', function ($q) use ($categoryIds) {
+            $q->whereIn($this->getHasCategoriesTable() . '.category_id', $categoryIds);
+        });
+    }
+
     abstract protected function getHasCategoriesTable(): string;
 }

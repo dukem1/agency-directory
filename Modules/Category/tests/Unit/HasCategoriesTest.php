@@ -46,4 +46,23 @@ class HasCategoriesTest extends TestCase
         $this->assertEquals($modelCategory->name, $category->name);
         $this->assertEquals($modelCategory->name, $name);
     }
+
+    #[Test] public function canFilterByCategory(): void
+    {
+        $model1 = ModelForTestHasCategories::create();
+        $model2 = ModelForTestHasCategories::create();
+        $model3 = ModelForTestHasCategories::create();
+
+        $category1 = Category::factory()->create();
+        $category2 = Category::factory()->create();
+        $category3 = Category::factory()->create();
+
+        $model1->syncCategories([$category1->id]);
+        $model2->syncCategories([$category2->id]);
+        $model3->syncCategories([$category3->id]);
+
+        $model = ModelForTestHasCategories::whereCategories([$category2->id])->first();
+
+        $this->assertEquals($model2->id, $model->id);
+    }
 }
