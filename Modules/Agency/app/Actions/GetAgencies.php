@@ -12,7 +12,7 @@ class GetAgencies
 
     public function handle(): \Illuminate\Database\Eloquent\Collection
     {
-        return Agency::all();
+        return Agency::withCategories()->get();
     }
 
     public function asController(): View
