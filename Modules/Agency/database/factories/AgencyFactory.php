@@ -19,6 +19,7 @@ class AgencyFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'description' => $this->faker->text(),
+            'logo' => $this->faker->imageUrl(),
         ];
     }
 }
