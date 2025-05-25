@@ -21,6 +21,16 @@ A lightweight Service Provider Directory with the following specs:
   - Areas for future enhancement
 
 ## Build and run instructions
+- Run `composer install`
+- Copy .env.example to .env `cp .env.example .env`
+- Run `php artisan key:generate`
+- Run `./vendor/bin/sail up -d`
+- Run `./vendor/bin/sail artisan migrate`
+- Run `./vendor/bin/sail artisan storage:link`
+- Run `./vendor/bin/sail artisan module:seed`
+- Run `./vendor/bin/sail npm install`
+- Run `./vendor/bin/sail npm run build`
+- Open link http://localhost:8080/agencies
 
 ## Design decisions
 - Using pgsql as a DB as have recent experience only with it
