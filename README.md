@@ -30,12 +30,12 @@ A lightweight Service Provider Directory with the following specs:
 - Run `./vendor/bin/sail artisan module:seed` - then choose 'All' and run it
 - Run `./vendor/bin/sail npm install`
 - Run `./vendor/bin/sail npm run build`
-- Open the link in browser: http://localhost:8080/agencies
+- Open the link in a browser: http://localhost:8080/agencies
 
 ## Design decisions
 - Using pgsql as a DB as have recent experience only with it
 - Using nwidart/laravel-modules, lorisleiva/laravel-actions, tucker-eric/eloquentfilter to better structure the source code
-- Categories implemented as many-to-many relation as they can be used in other application entities. Implemented a trait for ease of use.
+- Categories implemented as many-to-many relation. Also can be used with other application entities. Implemented a trait for ease of use.
 - Using spatie/laravel-sluggable to hide internal id structure
 
 ## Performance optimizations
